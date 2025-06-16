@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RuSpot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Welcome to RuuSpot</h1>
+    <button id="mode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+  </header>
+
+  <nav>
+    <a id="tab-home" class="active" href="#" onclick="showPage('home'); return false;">Home</a>
+    <a id="tab-desk" href="#" onclick="showPage('desk'); return false;">Reserve RuDesk</a>
+  </nav>
+
+  <main>
+    <section id="home-page">
+      <div class="embed-container">
+        <iframe
+          src="https://www.youtube.com/embed/mckDo_76Qh8"
+          allowfullscreen
+          title="RuSpot Live"
+        ></iframe>
+      </div>
+    </section>
+
+    <section id="desk-page" class="hidden">
+      <h2>Reserve Your RuuDesk</h2>
+      <form id="rudesks-form">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="time">Preferred Time</label>
+        <input type="datetime-local" id="time" name="time" required />
+
+        <label for="notes">Additional Notes</label>
+        <textarea id="notes" name="notes" rows="4"></textarea>
+
+        <button type="submit">Reserve</button>
+      </form>
+      <div id="confirmation" class="confirmation hidden"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
